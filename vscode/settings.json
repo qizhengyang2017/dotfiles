@@ -1,0 +1,8 @@
+{
+    "r.rpath.mac": "/Users/zhengyangqi/micromamba/envs/R4.2/bin/R",
+    "r.rterm.mac": "/Users/zhengyangqi/micromamba/envs/R4.2/bin/R",
+    "r.lsp.diagnostics": false,
+    "editor.fontSize": 15,
+    "python.venvPath": "~/micromamba/envs",
+    "explorer.sortOrder": "modified"
+}

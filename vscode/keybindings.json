@@ -1,0 +1,12 @@
+// Place your key bindings in this file to override the defaults
+[
+    { "key": "cmd+z", "command": "-undo" },
+    { "key": "cmd+z", "command": "undo", "when": "!notebookEditorFocused || inputFocus" },
+    { "key": "cmd+shift+z", "command": "-redo" },
+    { "key": "cmd+shift+z", "command": "redo", "when": "!notebookEditorFocused || inputFocus" },
+    {
+        "key": "z",
+        "command": "-undo",
+        "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+    }
+]
