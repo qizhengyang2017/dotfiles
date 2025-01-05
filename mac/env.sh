@@ -142,4 +142,4 @@ fi
 unset __mamba_setup
 # <<< mamba initialize <<<
 
-#source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh

@@ -1,7 +1,7 @@
 # dotfiles
 
 mac配置
-ln /Users/zhengyangqi/Nutstore\ Files/Nutstore/config/env.sh env.sh
+cp ~/Nutstore\ Files/Nutstore/config/env.sh ~/dotfiles/mac
 
 iterm2
 Default的配置
