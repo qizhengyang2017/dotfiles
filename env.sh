@@ -1,0 +1,1 @@
+/Users/zhengyangqi/Nutstore Files/Nutstore/config/env.sh
