@@ -50,6 +50,8 @@ lles(){
 
 ## >>> personal alias <<<
 
+alias r="radian"
+
 alias l="ls --color=auto -lhrt"
 
 # alias ll="ls -lrth --color=always| less -R" #列出文件
@@ -71,11 +73,22 @@ alias condaenv="micromamba activate R4.2"
 
 alias pap="nvim ~/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/seminar/文献阅读记录.md"
 
-dn="/Users/zhengyangqi/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/MyToolkit/2025/"`date -u +%Y-%m-%d`.md
-alias dn="nvim $dn"
+#dn="/Users/zhengyangqi/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/MyToolkit/2025/"`date -u +%Y-%m-%d`.md
+#alias dn="nvim $dn"
 
-dn1="/Users/zhengyangqi/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/MyToolkit/2025/"`date -u -v -1d +%Y-%m-%d`.md
-alias dn1="nvim $dn1"
+
+dn() {
+    local dn_path="/Users/zhengyangqi/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyToolkit/2025/$(date -u +%Y-%m-%d).md"
+    nvim "$dn_path"
+}
+
+dn1() {
+    local dn_path="/Users/zhengyangqi/Library/Mobile Documents/iCloud~md~obsidian/Documents/MyToolkit/2025/$(date -u -v -1d +%Y-%m-%d).md"
+    nvim "$dn_path"
+}
+
+#dn1="/Users/zhengyangqi/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/MyToolkit/2025/"`date -u -v -1d +%Y-%m-%d`.md
+#alias dn1="nvim $dn1"
 
 
 
@@ -141,5 +154,3 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
-
-source $(brew --prefix)/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
