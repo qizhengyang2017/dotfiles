@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -72,7 +79,7 @@ ZSH_THEME="ys"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git z zsh-syntax-highlighting zsh-autosuggestions autojump)
-plugins=(git zsh-syntax-highlighting autojump)
+plugins=(git autojump)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,10 +125,32 @@ source $ZSH/oh-my-zsh.sh
 # unset __mamba_setup
 # # <<< mamba initialize <<<
 
-## my config file 路径有空格必须加引号
-my_config_file="${HOME}/Nutstore Files/Nutstore/config/env.sh"
-. "${my_config_file}"
-#alias envc="vim \"${my_config_file}\""
+
+
+source ~/.zplug/init.zsh
+#zplug 'plugins/git', from:oh-my-zsh, if:'which git'
+zplug "romkatv/powerlevel10k", as:theme, depth:1
+#zplug "plugins/vi-mode", from:oh-my-zsh
+#zplug "wting/autojump"
+#zplug "marlonrichert/zsh-autocomplete"
+zplug "zsh-users/zsh-completions", defer:2
+zplug "zsh-users/zsh-autosuggestions", defer:2
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Then, source plugins and add commands to $PATH
+#zplug load --verbose
+zplug load
+
+#source ~/Nutstore\ Files/Nutstore/config/env.sh
+source /Users/zhengyangqi/dotfiles/mac/env.sh
 
 # Created by `pipx` on 2024-12-04 10:32:11
 export PATH="$PATH:/Users/zhengyangqi/.local/bin"
@@ -131,3 +160,12 @@ PERL5LIB="/Users/zhengyangqi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export P
 PERL_LOCAL_LIB_ROOT="/Users/zhengyangqi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/zhengyangqi/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/zhengyangqi/perl5"; export PERL_MM_OPT;
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export PATH="/Users/zhengyangqi/Melon/proj_sexChr/03_mcscanx/MCScanX/downstream_analyses:$PATH"
+export PATH="/Users/zhengyangqi/Melon/proj_sexChr/03_mcscanx/MCScanX:$PATH"
+export CLASSPATH="/Users/zhengyangqi/Melon/proj_sexChr/03_mcscanx/MCScanX/downstream_analyses"
