@@ -1,8 +1,104 @@
 {
     "r.rpath.mac": "/Users/zhengyangqi/micromamba/envs/R4.2/bin/R",
-    "r.rterm.mac": "/Users/zhengyangqi/micromamba/envs/R4.2/bin/R",
     "r.lsp.diagnostics": false,
     "editor.fontSize": 15,
     "python.venvPath": "~/micromamba/envs",
-    "explorer.sortOrder": "modified"
+    "explorer.sortOrder": "modified",
+    "terminal.integrated.fontSize": 15,
+    "path-autocomplete.triggerOutsideStrings": true,
+    "r.plot.useHttpgd": true,
+    "r.rterm.mac": "/Users/zhengyangqi/.local/bin/radian",
+    "r.rterm.option": [
+        "--no-save",
+        "--no-restore",
+        "--r-binary=/Users/zhengyangqi/micromamba/envs/R4.2/bin/R"
+    ],
+    "r.plot.defaults.fullWindowMode": true,
+    "r.bracketedPaste": true,
+    "editor.minimap.enabled": false,
+    "vim.leader": "<space>",
+    "vim.useSystemClipboard": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        },
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "m"],
+            "commands": [
+                "bookmarks.toggle"
+            ]
+        },
+        {
+            "before": ["<leader>", "b"],
+            "commands": [
+                "bookmarks.list"
+            ]
+        }
+    ],
+    "python.terminal.executeInFileDir": true,
+    "jupyter.interactiveWindow.textEditor.executeSelection": true,
+    "todohighlight.isEnable": true,
+    "todohighlight.include": [
+        "**/*.sh", 
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss"
+    ],
+    "files.associations": {
+        "*.sbatch": "shellscript"
+    },
+    "fileheader.configObj": {
+        "language": {
+          "r": {
+            "middle": "# ",
+          }
+        },
+        "customHasHeadEnd":{
+          "r": "cancel head and function",
+        },
+        "createFileTime": true,
+        "autoAdd": true,
+        "autoAddLine": 100,
+        "autoAlready": true,
+        "headInsertLine": {
+          "php": 2,
+          "sh": 1
+        },
+        "beforeAnnotation": {
+          "py": "#!/usr/bin/env python3\n# coding=utf-8",
+          "sh": "#!/usr/bin/bash",
+          "r": "#!/work/user/zqi/micromamba/envs/mytools/bin/Rscript",
+          "sbatch": "#!/usr/bin/bash\n#SBATCH -J xxx\n#SBATCH -o %j.out\n#SBATCH -e %j.err\n#SBATCH --partition=workq\n#SBATCH --cpus-per-task=1\n#SBATCH --mem=30G\n"
+        },
+        "switch": {
+          "newlineAddAnnotation": true
+        },
+        "supportAutoLanguage": ["sh","py","r","sbatch"],
+      },
+      "fileheader.customMade": {
+        "Author": "git config user.name && git config user.email",
+        "Date": "Do not edit",
+        "LastEditTime": "Do not edit",
+        "FilePath": "Do not edit",
+        "Description": ""
+      },
+      "markdown-preview-enhanced.enablePreviewZenMode": true,
+      "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+      },
+      "markdown.copyFiles.destination": {
+        "**/*.md": "assets/${documentBaseName}/${fileName}"
+      },
 }

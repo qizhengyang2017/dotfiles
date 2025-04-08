@@ -8,5 +8,76 @@
         "key": "z",
         "command": "-undo",
         "when": "notebookEditorFocused && !inputFocus && !notebookOutputInputFocused"
+    },
+
+    {
+        "key": "cmd+shift+m",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+        "snippet": " |> "
+        }
+    },
+    {
+        "key": "cmd+shift+m",
+        "command": "workbench.action.terminal.sendSequence",
+        "when": "terminalFocus",
+        "args": {
+        "text": " |> "
+        }
+    },
+    {
+        "key": "cmd+shift+r",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+        "snippet": "# section -----------------------------------------------------------\n"
+        }
+    },
+    {
+        "key": "cmd+alt+i",
+        "command": "editor.action.insertSnippet",
+        "when": "editorTextFocus",
+        "args": {
+        "snippet": "```{r}\n$0\n```"
+        }
+    },
+    {
+        "key": "alt+-",
+        "command": "type",
+        "args": {
+            "text": " <- "
+        },
+        "when": "editorTextFocus && (editorLangId == 'rmd' || editorLangId == 'r')"
+    },
+    {
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+    {
+        "key": "shift+a",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus && !inputFocus"
+    },
+    {
+        "key": "alt+cmd+c",
+        "command": "markdown.extension.editing.toggleCodeBlock",
+        "when": "editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "key": "cmd+i",
+        "command": "-markdown.extension.editing.toggleItalic",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "extension.fileheader",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+cmd+i",
+        "command": "-extension.fileheader",
+        "when": "editorTextFocus"
     }
 ]
