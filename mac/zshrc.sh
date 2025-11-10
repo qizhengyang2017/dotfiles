@@ -151,8 +151,8 @@ zplug load
 
 # zsh-autocomplete的配置
 # Make ← and → always move the cursor on the command line
-bindkey -M menuselect  '^[[D' .backward-char  '^[OD' .backward-char
-bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
+# bindkey -M menuselect  '^[[D' .backward-char  '^[OD' .backward-char
+# bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
 
 #source ~/Nutstore\ Files/Nutstore/config/env.sh
 source /Users/zhengyangqi/dotfiles/mac/env.sh

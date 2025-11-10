@@ -101,4 +101,7 @@
       "markdown.copyFiles.destination": {
         "**/*.md": "assets/${documentBaseName}/${fileName}"
       },
+      "workbench.colorTheme": "Default Light Modern",
+      "files.autoSave": "onWindowChange",
+      "python.defaultInterpreterPath": "/Users/zhengyangqi/micromamba/envs/pygenometracks",
 }
