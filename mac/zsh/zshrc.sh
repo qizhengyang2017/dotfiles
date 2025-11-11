@@ -155,7 +155,7 @@ zplug load
 # bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
 
 #source ~/Nutstore\ Files/Nutstore/config/env.sh
-source /Users/zhengyangqi/dotfiles/mac/env.sh
+source /Users/zhengyangqi/dotfiles/mac/zsh/env.sh
 
 # Created by `pipx` on 2024-12-04 10:32:11
 export PATH="$PATH:/Users/zhengyangqi/.local/bin"
