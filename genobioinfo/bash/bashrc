@@ -1,0 +1,109 @@
+# ==> environment variable <==
+export CLASSPATH="/home/zqi/work/software/MCScanX/downstream_analyses"
+
+PATH=$HOME/bin:$PATH
+PATH=~/neovim/bin:$PATH
+PATH=$HOME/local/bin:$PATH
+PATH=~/work/software/python3.7/bin:$PATH
+
+#PATH=~/micromamba/envs/mytools/bin:$PATH
+
+PATH=/home/zqi/.cargo/bin:$PATH
+PATH=~/work/07_paml/pal2nal.v14:$PATH
+export PATH
+
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# history
+export HISTSIZE=50000
+export HISTFILESIZE=1000000
+export PROMPT_COMMAND="history -a"
+# export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+
+PS1="\[\033[0;32m\]\A \[\033[0;31m\]\u\[\033[0;34m\]@\[\033[0;35m\]\h\[\033[0;34m\]:\[\033[00;36m\]\w\[\033[0;33m\] \n$\[\033[0m\]"
+
+# ==> alias <==
+
+alias python="python3"
+#alias pip="pip3"
+
+alias his="cat ~/.bash_history|tail -n"
+alias hs="cat ~/.bash_history|grep -i"
+
+alias l="ls --color=auto -lhrt"
+
+
+
+
+alias mv="mv -i"
+alias cp="cp -pi"
+alias les="less -S"
+alias rm="rm -i"
+
+# slurm
+alias mysbatch="sbatch --mem=30G -t 4-00:00:00 -o %j.out -e %j.err --partition=workq --mail-type=begin,end,fail --mail-user=qizhengyang17@qq.com"
+alias s="squeue -u zqi"
+alias mysrun="srun --nodes=1 --ntasks=1 --mem=20G --time=03:00:00 --pty bash"
+alias mysrun_vscode="srun --nodes=1 --nodelist=n010 --ntasks=1 --mem=30G --time=12:00:00 --pty bash"
+
+
+alias trash-put="trash-put --trash-dir /work/user/zqi/.Trash"
+alias trash-list="trash-list --trash-dir /work/user/zqi/.Trash"
+alias trash-restore="trash-restore --trash-dir /work/user/zqi/.Trash"
+alias trash-empty="trash-empty --trash-dir /work/user/zqi/.Trash"
+alias trash-rm="trash-rm --trash-dir /work/user/zqi/.Trash"
+
+
+# ==> function <==
+
+lles(){
+  local dir="${1:-.}"
+  ls -lrth --color=always "$dir" | less -R
+}
+
+fzfp() {
+    fzf --preview '
+    if [[ $(file --mime {}) =~ gzip ]]; then
+        zcat {}
+    elif [[ $(file --mime {}) =~ zip ]]; then
+        unzip -p {}
+    else
+        cat {}
+    fi
+    '
+}
+
+search()
+{
+grep --exclude-dir=\.ipynb_checkpoints --include=\*.{r,ipynb,py,sh} -nR . -e "$1"
+}
+
+# get col
+gc()
+{
+  head -n 1 $1|awk '{print NF}'
+}
+
+
+# mkdir and enter it
+mkcd()
+{
+  mkdir -p "$1" && cd "$1"
+}
+
+# find process
+function p(){
+   ps ux | grep -i $1 | grep -v grep
+}
+
+# source your own shrc file if exists
+[ -f ~/.env.sh ] && source ~/.env.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# 根据历史记录补全
+source ~/.local/share/blesh/ble.sh
+. "$HOME/.cargo/env"
