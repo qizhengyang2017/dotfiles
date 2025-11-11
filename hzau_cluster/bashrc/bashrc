@@ -1,0 +1,185 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then . /etc/bashrc
+fi
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+
+# 让带有 .important 后缀的文件在终端 ls 中显示为紫色高亮（亮洋红）
+# 目录没有用
+export LS_COLORS="$LS_COLORS:*.important=01;35"
+export LS_COLORS="$LS_COLORS:*.md=01;33"
+
+# User specific aliases and functions
+# alias vim=nvim
+alias mv='mv -i'
+alias rm='rm -i'
+alias l="ll -hrt"
+alias les="less -S"
+# alias s="source ~/.bashrc"
+# 排序
+alias b="bjobs|awk 'NR==1 {print} NR>1 {print | \"sort\"}'"
+alias bb='bjobs -o "jobid:10 user:6 stat:6 queue:6 exec_host:10 job_name:14  max_mem:14 submit_time:12"'
+
+alias bh="bhosts|grep ok"
+alias lsf="echo -e '#BSUB -J \n#BSUB -n 1\n#BSUB -R span[hosts=1]\n#BSUB -o %J.out\n#BSUB -e %J.err\n'"
+alias bss="bsub -q normal -o %J.out -e %J.err"
+#alias his="history | cut -c 8-|tail -n " # 不带行号的历史记录
+alias his="cat ~/my_bash_history|tail -n"
+alias hs="cat ~/my_bash_history|grep"
+alias hsn="cat ~/my_bash_history|grep -n"
+alias semi="cd ~/semi_wild/new_analysis1124"
+alias pg="cd ~/pan-genome/"
+alias bbjobs='bjobs -o "jobid:10 user:6 stat:6 queue:6 exec_host:10 job_name:10  max_mem:14 submit_time:12"'
+
+# alias ga="cd /data/cotton/zyqi/Ga"
+# alias gp="cd ~/cotton_fiber/GP"
+
+
+# function
+# search script
+search()
+{
+grep --exclude-dir=\.ipynb_checkpoints --include=\*.{r,ipynb,py,sh} -nR . -e "$1"
+}
+
+# get col
+gc()
+{
+  head -n 1 $1|awk '{print NF}'
+}
+
+
+# mkdir and enter it
+mkcd()
+{
+  mkdir -p "$1" && cd "$1"
+}
+
+# find process
+function p(){
+   ps ux | grep -i $1 | grep -v grep
+}
+
+
+# User specific environment and startup programs
+PATH=~/software/bin:~/software/ucsc:/public/home/zyqi/software/tassel-5-standalone:/public/home/software/opt/moudles/Modules/3.2.10/bin/:$PATH
+PATH=~/software/sratoolkit.2.11.0-centos_linux64/bin:$PATH
+PATH=~/software/emmax-beta-07Mar2010:$PATH
+PATH=~/software/rar:$PATH
+PATH=/public/home/zyqi/software/gmat-1.0.1:$PATH
+# nextflow
+PATH=~/cotton_fiber/genome/liftover:$PATH
+PATH=~/cotton_fiber/genome/liftover/mafTools/bin:$PATH
+PATH=/public/home/zyqi/.local/bin:$PATH
+export PATH
+
+source /public/home/software/opt/moudles/Modules/3.2.10/init/bash
+
+#Language
+#export LANG=en_US.UTF-8
+#export LC_ALL=en_US.UTF-8
+
+# prompt string one, shell 提示符
+PS1="\[\033[0;32m\]\A \[\033[0;31m\]\u\[\033[0;34m\]@\[\033[0;35m\]\h\[\033[0;34m\]:\[\033[00;36m\]\w\[\033[0;33m\] \n$\[\033[0m\]"
+
+# 2021-03-04
+export HISTSIZE=50000
+export HISTFILESIZE=1000000
+
+# 2021年06月07
+# https://segmentfault.com/a/1190000039858269
+export HISTFILE=~/my_bash_history
+
+export PATH=${PATH}:/public/home/zyqi/edirect
+export PATH=/public/home/zyqi/software/Trimmomatic-0.36:$PATH
+
+# 实时追加history到文件 https://blog.csdn.net/m0_38020436/article/details/78730631
+export PROMPT_COMMAND="history -a"
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/public/home/zyqi/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/public/home/zyqi/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/public/home/zyqi/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/public/home/zyqi/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# export PATH="/public/home/zyqi/anaconda3/bin:$PATH"
+# source activate R4.2
+# conda activate new
+
+
+PATH="/public/home/zyqi/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/public/home/zyqi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/public/home/zyqi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/public/home/zyqi/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/public/home/zyqi/perl5"; export PERL_MM_OPT;
+
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/usr/local/lib
+export PATH=$HOME/usr/local/bin:$PATH
+alias vi=nvim
+
+# 服务器现有版本(2.2)的grep匹配多行的pattern list的时候非常慢
+module load grep/3.3
+# 2022-02-24
+module load HTSlib/1.9
+module load VCFtools/0.1.16
+module load plink/1.9
+module load git/2.17.0
+module load BCFtools/1.15.1
+module load BEDTools/2.27
+module load SAMtools/1.9
+module load tmux/3.4
+
+
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'mamba init' !!
+export MAMBA_EXE="/public/home/zyqi/.local/bin/micromamba";
+export MAMBA_ROOT_PREFIX="/public/home/zyqi/micromamba";
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell bash --prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    if [ -f "/public/home/zyqi/micromamba/etc/profile.d/micromamba.sh" ]; then
+        . "/public/home/zyqi/micromamba/etc/profile.d/micromamba.sh"
+    else
+        export  PATH="/public/home/zyqi/micromamba/bin:$PATH"  # extra space after export prevents interference from conda init
+    fi
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+
+# micromamba activate new_R
+micromamba activate R4.2
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
+finder() {
+  local dir
+  dir=$(find . -type d | fzf)
+  if [[ -n "$dir" ]]; then
+    cd "$dir" || return
+  fi
+}
+
+cdf() {
+  local dir
+  dir=$(find ~/semi_wild/ -type d 2>/dev/null | fzf) && cd "$dir"
+}
+
+eval "$(zoxide init bash --cmd j)"

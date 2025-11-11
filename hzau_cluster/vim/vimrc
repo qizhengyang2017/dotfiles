@@ -1,0 +1,16 @@
+
+" set number
+set hlsearch
+" set autoindent
+set autoread      " help W11
+set backspace=indent,eol,start
+syntax on
+
+set nobackup       " no backup files
+set noswapfile     " no swap files
+set nowritebackup  " only in case you don't want a backup file while editing
+set noundofile     " no undo files
+" set listchars=tab:»\ ,trail:·
+
+" 清除markdown下划线高亮，必须放在最后
+autocmd FileType markdown syntax clear markdownError
