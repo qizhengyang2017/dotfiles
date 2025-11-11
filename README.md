@@ -9,6 +9,7 @@ git log origin/main
 
 # 获取并自动合并
 git pull origin main
+git pull
 ```
 
 
