@@ -1,0 +1,31 @@
+set clipboard=unnamed
+"set clipboard=unnamedplus
+" 搜索高亮设置
+set hlsearch
+set incsearch
+nnoremap ,, :nohlsearch<CR>
+
+" 搜索词 全是小写 → 忽略大小写
+set ignorecase
+set smartcase
+
+" nbsp是不换行空格
+set list
+set listchars=tab:>-,trail:·,extends:>,precedes:<,nbsp:+
+
+syntax on
+
+" 自动恢复光标位置
+if has("autocmd")
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal g`\"" |
+  \ endif
+endif
+
+let mapleader = " "
+
+" 加粗当前单词
+nnoremap <leader>b bi**<esc>ea**<esc>
+" 加粗选中文本（Visual 模式）
+vnoremap <leader>b <Esc>`>a**<Esc>`<i**<Esc>
