@@ -1,6 +1,5 @@
-if has('mouse')
-  set mouse=r
-endif
+set autoread
+
 
 set clipboard=unnamedplus
 set clipboard=unnamed
