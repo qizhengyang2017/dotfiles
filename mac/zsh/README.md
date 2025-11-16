@@ -1,27 +1,49 @@
-选择历史命令的时候经常会卡住是怎么回事
-## git 插件
+# zsh插件配置
+
+## zoxide
+
+使用方式
+1. 可以替代`cd`
+2. `z foo<SPACE><TAB>`利用了fzf
 
 ```bash
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git z)
+z foo              # cd into highest ranked directory matching foo
+z foo bar          # cd into highest ranked directory matching foo and bar
+z foo /            # cd into a subdirectory starting with foo
+
+z ~/foo            # z also works like a regular cd command
+z foo/             # cd into relative path
+z ..               # cd one level up
+z -                # cd into previous directory
+
+zi foo             # cd with interactive selection (using fzf)
+
+z foo<SPACE><TAB>  # show interactive completions (zoxide v0.8.0+, bash 4.4+/fish/zsh only)
 ```
 
-```shell
-gd='git diff'
-gdca='git diff --cached'
-gdct='git describe --tags $(git rev-list --tags --max-count=1)'
-gdcw='git diff --cached --word-diff'
-gds='git diff --staged'
-gdt='git diff-tree --no-commit-id --name-only -r'
-gdup='git diff @{upstream}'
-gdw='git diff --word-diff'
+替代autojump
+
+```bash
+brew install zoxide
 ```
 
-https://www.notion.so/git-alias-10bf1030dd5980b7a038e92a38da746f?pvs=4
+zshrc中写入
+```bash
+eval "$(zoxide init zsh)"
+```
+
+
+hzau集群也是用的zoxide
+
+```bash
+eval "$(zoxide init bash --cmd j)"
+```
+
+
+https://github.com/qizhengyang2017/new_analysis1124/issues/14
+
+
+genobioinfo用的`autojump`
 
 ## autojump
 
@@ -29,9 +51,6 @@ https://www.notion.so/git-alias-10bf1030dd5980b7a038e92a38da746f?pvs=4
 plugins=(git autojump)
 ```
 
-z 插件的作用类似（使用autojump替代了）：
-- 直接输入 z，紧跟 tab 键
-- 输入形如 z substring，即提供子字符串，它们将所有匹配 substring 的目录都列举出来。
 ## zplug管理插件
 
 - powerlevel10k 主题
@@ -40,7 +59,7 @@ z 插件的作用类似（使用autojump替代了）：
 - zsh-autosuggestions 历史命令
 - zsh-syntax-highlighting
 
-```shell fold
+```bash
 source ~/.zplug/init.zsh
 #zplug 'plugins/git', from:oh-my-zsh, if:'which git'
 zplug "romkatv/powerlevel10k", as:theme, depth:1
@@ -72,10 +91,27 @@ bindkey -M menuselect  '^[[C'  .forward-char  '^[OC'  .forward-char
 defer=2的含义
 - If the value is 2 or above, zplug will source the plugin after `compinit` (see also [#26](https://github.com/zplug/zplug/issues/26))
 
+什么是compinit？
+- compinit 是 zsh 的补全系统初始化命令 chatGPT
+
+
+
+### zsh-autosuggestions
+
+- 根据历史命令自动显示灰色建议
+
+这个插件会和zsh-autocomplete的功能有冲突，造成：
+- 造成选择历史命令的时候经常会卡住
+- 选择完历史命令需要按enter，才能让光标在命令上移动
+![](../attachments/Screenshot%202025-11-16%20at%2012.02.52.png)
+![](../attachments/20251116134713-不使用autocomplete-按tab也有提示.png)
 ### zsh-autocomplete
+
+不使用
 
 >This plugin for Zsh adds real-time type-ahead autocompletion to your command line, similar to what you find desktop apps. While you type on the command line, available completions are listed automatically; no need to press any keyboard shortcuts. Press Tab to insert the top completion or ↓ to select a different one.
 
+![](../attachments/Screenshot%202025-11-16%20at%2011.59.33.png)
 ## 参考
 
 1. [marlonrichert/zsh-autocomplete: 🤖 Real-time type-ahead completion for Zsh. Asynchronous find-as-you-type autocompletion.](https://github.com/marlonrichert/zsh-autocomplete)
@@ -83,3 +119,4 @@ defer=2的含义
 3. [zplug/zplug: :hibiscus: A next-generation plugin manager for zsh](https://github.com/zplug/zplug)
 4. https://github.com/wting/autojump
 5. https://mp.weixin.qq.com/s/0Gowu2tTsTvr0z_mUsWrig
+

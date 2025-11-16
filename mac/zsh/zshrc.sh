@@ -79,7 +79,9 @@ ZSH_THEME="ys"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git z zsh-syntax-highlighting zsh-autosuggestions autojump)
-plugins=(git autojump)
+# plugins=(git autojump)
+# plugins=(git z)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,7 +134,7 @@ source ~/.zplug/init.zsh
 zplug "romkatv/powerlevel10k", as:theme, depth:1
 #zplug "plugins/vi-mode", from:oh-my-zsh
 #zplug "wting/autojump"
-zplug "marlonrichert/zsh-autocomplete"
+#zplug "marlonrichert/zsh-autocomplete"
 zplug "zsh-users/zsh-completions", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -174,3 +176,6 @@ export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 export PATH="/Users/zhengyangqi/Melon/proj_sexChr/03_mcscanx/MCScanX/downstream_analyses:$PATH"
 export PATH="/Users/zhengyangqi/Melon/proj_sexChr/03_mcscanx/MCScanX:$PATH"
 export CLASSPATH="/Users/zhengyangqi/Melon/proj_sexChr/03_mcscanx/MCScanX/downstream_analyses"
+
+# 2025-11-16 自动跳转
+eval "$(zoxide init zsh)"
