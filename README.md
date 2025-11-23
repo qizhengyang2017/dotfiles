@@ -4,6 +4,8 @@
 ```shell
 # 查看远程的情况，确定是否需要同步。
 git fetch origin
+git diff main origin/main
+
 git status
 git log origin/main
 

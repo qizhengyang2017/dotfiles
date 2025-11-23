@@ -12,18 +12,21 @@ cp $HOME/.zshrc mac/zsh/zshrc.sh
 cp ~/Library/Preferences/com.googlecode.iterm2.plist mac/iterm
 
 # karabiner
-mkdir mac/karabiner
+# mkdir mac/karabiner
 cp ~/.config/karabiner/karabiner.json mac/karabiner
 
 
 # vim
 
 cp ~/.vimrc mac/vim/vimrc
-cp -rp ~/.config/nvim mac/nvim
+
+
+# nvim
+cp -rp ~/.config/nvim mac
 
 
 # Rime
-mkdir -p mac/Rime
+# mkdir -p mac/Rime
 cp ~/Library/Rime/squirrel.custom.yaml mac/Rime
 cp ~/Library/Rime/default.custom.yaml mac/Rime
 cp ~/Library/Rime/double_pinyin.custom.yaml mac/Rime
