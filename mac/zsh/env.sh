@@ -1,6 +1,5 @@
 # User specific aliases and functions
 
-
 # 显示最近 N 条历史命令（不带编号）
 
 hs() {
@@ -8,9 +7,6 @@ hs() {
   history | tail -n "$n" | sed 's/^ *[0-9]\+\** *//'
   # tail -n "$n" ~/.zsh_history | sed 's/^: [0-9]*:[0-9]*;//'
 }
-
-
-
 
 # 生信软件
 PATH=/Users/zhengyangqi/Melon/proj_sexChr/sessilifolia_tree/softwares/Gblocks_0.91b:$PATH
@@ -82,7 +78,7 @@ alias les="less -S"
 
 alias st="cd /Users/zhengyangqi/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/MyToolkit"
 # alias envc="vim ~/Dropbox/config/env.sh"
-alias envc="vim /Users/zhengyangqi/dotfiles/mac/env.sh"
+alias envc="vim /Users/zhengyangqi/dotfiles/mac/zsh/env.sh"
 
 alias condaenv="micromamba activate R4.2"
 
