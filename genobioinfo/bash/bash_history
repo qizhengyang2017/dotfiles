@@ -1,0 +1,1369 @@
+cd ..
+l
+cd 14_earlgrey
+l
+l earlGrey_allChr
+tree earlGrey_allChr
+l
+s
+tail earlgrey_26238773.out
+s
+tail earlgrey_26238773.out
+exit
+srun --pty bash
+exit
+ta
+tmux ls
+exit
+exit
+tmux ls
+exit
+tmux ls
+cd scripts/R ; ls
+l
+cat 00_load_packages.R 
+cd -
+rm -rf scripts
+tree
+ta
+exit
+tmux ls
+exit
+tmux ls
+exit
+tmux ls
+j myproject
+tree
+l R
+rm -rf R
+rm -rf python
+rm -rf docs
+nvim README.md 
+vim init.R 
+nvim init.R 
+exit
+vim ~/.config/nvim/lua/config/options.lua
+l ~/.local/share/nvim/undo/
+l ~/.local/share/nvim/
+nvim init.R 
+l /home/zqi/.local/state/nvim/undo
+nvim init.R 
+l
+j 01_TE
+l
+cd 01_TE/
+l
+mkdir data
+cd data
+j data
+j TE__2__/home/zqi/work/sex_chr/TE_1003 
+l
+cd /home/zqi/work/sex_chr/data/raw/repeat/grandis/my_EDTA/
+l
+ln -s ~/work/sex_chr/data/raw/repeat/grandis/my_EDTA/XY_2chr.fa.mod.EDTA.intact.gff3
+l
+cd ..
+l
+cd -
+ln -s /home/zqi/work/sex_chr/data/raw/genome/20240304_FINAL_genome/XY_2chr.fa
+l
+nvim ../README.md
+cd ~/.config/nvim
+l
+cd lua
+l
+cd config
+l
+cat options.lua 
+vim autocmds.lua 
+nvim autocmds.lua 
+l
+cd ..
+l
+tmux new -s fig_te
+exit
+s
+l
+cd sex_chr
+l
+cd 14_earlgrey
+l
+tail earlgrey_26238773.err
+vim run.sh
+tail earlgrey_26238773.err
+les earlgrey_26238773.out
+cd ..
+l
+cd 14_earlgrey_bak
+l
+cat configure_dfam39.sh
+tmux ls
+cd ..
+l
+cd 14_earlgrey_bak
+l
+./configure_dfam39.sh
+cat run.sh
+micromamba activate earlgrey
+./configure_dfam39.sh
+l
+les earlgrey_26195964.out
+cat configure_dfam39.sh
+l /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/famdb/
+diff configure_dfam39.sh configure_dfam39.sh.bak
+diff configure_dfam39.sh.bak configure_dfam39.sh
+cat configure_dfam39.sh
+cd /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/famdb/
+curl -o 'dfam39_full.#1.h5.gz' 'https://dfam.org/releases/current/families/FamDB/dfam39_full.[5].h5.gz'
+cat configure_dfam39.sh.bak
+cd -
+cat configure_dfam39.sh.bak
+cd ../..
+l
+cd sex_chr
+l
+cd 14_earlgrey_bak
+l
+l /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/famdb/
+bash configure_dfam39.sh.bak
+l /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/famdb/
+l
+cat configure_dfam39.sh
+curl -o 'dfam39_full.#1.h5.gz' 'https://dfam.org/releases/current/families/FamDB/dfam39_full.[5].h5.gz'
+cd /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/famdb/
+l
+rm -f 1.h5.gz dfam39_full.0.h5.gz dfam39_full.1.h5.gz
+cd -
+l
+vim configure_dfam39.sh
+l
+./configure_dfam39.sh
+l
+cat configure_dfam39.sh
+cd /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/famdb/
+curl -o 'dfam39_full.#1.h5.gz' 'https://dfam.org/releases/current/families/FamDB/dfam39_full.[0,5].h5.gz'
+vim configure_dfam39.sh
+cd -
+l
+vim configure_dfam39.sh
+tmux list-keys -Na
+l
+cd /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/famdb/
+l
+./configure_dfam39.sh
+rm dfam39_full.#1.h5.gz dfam39_full.0.h5.gz dfam39_full.5.h5.gz -f
+l
+cat rmlib.config
+l
+rm rmlib.config
+l
+mkdir test_db
+cd test_db/
+cp dfam39_full.0.h5.gz ~/work/test_db
+l
+gunzip dfam39_full.0.h5.gz
+l
+md5sum dfam39_full.0.h5
+l
+md5sum dfam39_full.0.h5
+rm dfam39_full.0.h5 -f
+l
+l
+cd ..
+rm -rf test_db
+l
+cd sex_chr/
+l
+cd 14_earlgrey_bak
+l
+l
+cd ..
+l
+mv 14_earlgrey_bak 14_earlgrey_Dfam_h5
+cd 14_earlgrey_Dfam_h5
+l
+rm *
+vim run.sh
+cat configure_dfam39.sh
+l /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/famdb/
+vim configure_dfam39.sh
+l
+l
+bash configure_dfam39.sh
+micromamba activate earlgrey
+l
+bash configure_dfam39.sh
+vim /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/repeatmasker.help
+l
+sbatch run.sh
+s
+cat rmlib.config
+l
+cat run.sh
+l
+l
+s
+l
+les earlgrey_26570380.out
+l
+les earlgrey_26570380.err
+s
+scancel 26570380
+l
+vim run.sh
+vim configure_dfam39.sh
+rm *
+l
+sbatch run.sh
+les earlgrey_26570380.err
+les earlgrey_26570380.out
+l
+s
+l
+nvim earlgrey_26570381.err
+cat run.sh
+vim run.sh
+nvim run.sh
+l
+l
+exit
+l earlGrey_allChr
+tree earlGrey_allChr
+l
+s
+scancel 26570381
+clear
+l
+rm -rf earlGrey_allChr Coccinia_genome_XY.final_20240304.ChrOnly.fasta.bak.gz Coccinia_genome_XY.final_20240304.ChrOnly.fasta.dict Coccinia_genome_XY.final_20240304.ChrOnly.fasta.prep.bak Coccinia_genome_XY.final_20240304.ChrOnly.fasta.prep 
+l
+mkdir log; mv *.err *.out log
+l
+cd /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/famdb/
+l
+nvim configure_dfam39.sh
+sbatch run.sh
+l
+ta
+exit
+tmux ls
+s
+l
+tail earlgrey_26570384.err
+ta
+tmux ls
+s
+l
+tail earlgrey_26570384.out
+ta
+exit
+s
+tmux ls
+s
+cd ../..
+l
+cd 14_earlgrey_Dfam_h5
+l
+tail earlgrey_26570384.out
+les earlgrey_26570384.out
+l
+les earlgrey_26570384.err
+cd earlGrey_allChr
+l
+cd Coccinia.grandis_EarlGrey
+l
+micromamba activate earlgrey
+which repeatmasker
+repeatmasker -v
+l /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/
+l /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/famdb
+cd /work/user/zqi/micromamba/envs/earlgrey/share/RepeatMasker/Libraries/famdb
+l
+cat rmlib.config
+cd ..
+l
+les RepeatMasker.lib
+cd ..
+l
+l configure 
+vim configure
+cd /work/user/zqi/sex_chr/14_earlgrey_Dfam_h5/earlGrey_allChr/Coccinia.grandis_EarlGrey/Coccinia.grandis_Database/
+l
+les Coccinia.grandis-families.fa
+grep ">" Coccinia.grandis-families.fa|wc -l
+cd -
+l
+cd Libraries
+l
+grep ">" RepeatMasker.lib|wc -l
+les Coccinia.grandisEarlGrey.log
+nvim Coccinia.grandisEarlGrey.log
+tmux attach -t fig_te
+tmux ls
+exit
+tmux ls
+ta
+hostname
+exit
+exit
+exit
+tmux ls
+s
+l
+tail Coccinia.grandisEarlGrey.log
+cd ..
+l
+cd ..
+l
+nvim configure_dfam39.sh
+l
+les earlgrey_26570384.out
+cd ~/work/sex_chr/14_earlgrey_Dfam_h5
+l
+cd log
+l
+les earlgrey_26195964.out
+les earlgrey_26570380.out
+head -n 200 earlgrey_26570384.out
+l
+tail earlgrey_26570384.out
+l
+cd ..
+l
+cd earlGrey_allChr
+l
+cd Coccinia.grandis_EarlGrey/
+l
+tail Coccinia.grandisEarlGrey.log
+tmux attach -t fig_te
+exit
+l
+les big_file.txt
+wc -l big_file.txt
+les big_file.txt
+vim cal_total_big_file.sh
+sh cal_total_big_file.sh
+cat find_big_file.sh
+vim README.md 
+l
+tmux ls
+tail -20  Coccinia.grandisEarlGrey.log
+l
+cd /work/user/zqi/sex_chr/14_earlgrey_Dfam_h5/earlGrey_allChr/Coccinia.grandis_EarlGrey/Coccinia.grandis_summaryFiles/
+l
+les Coccinia.grandis.filteredRepeats.gff
+les Coccinia.grandis_divergence_summary_table.tsv
+les Coccinia.grandis-families.fa.strained
+cat Coccinia.grandis.highLevelCount.txt
+les Coccinia.grandis.highLevelCount.kable
+cat Coccinia.grandis.highLevelCount.kable
+l
+les Coccinia.grandis.filteredRepeats.bed
+les Coccinia.grandis_divergence_summary_table.tsv
+cd ..
+l
+cd Coccinia.grandis_RepeatLandscape
+l
+les Coccinia.grandis_summary_table.tsv
+l
+tmux attach -t fig_te
+tmux ls
+cd ..
+l
+tmux attach -t fig_te
+head -n 200 Coccinia.grandisEarlGrey.log
+l
+j summ__
+cd -
+j summa__1__/work/user/zqi/sex_chr/14_earlgrey_Dfam_h5/earlGrey_allChr/Coccinia.grandis_EarlGrey/Coccinia.grandis_summaryFiles 
+l
+j earlgrey__3__/home/zqi/work/sex_chr/14_earlgrey_Dfam_h5/earlGrey_allChr/Coccinia.grandis_EarlGrey 
+l
+cd Coccinia.grandis_RepeatLandscape/
+l
+md5sum Coccinia.grandis_classification_landscape.pdf 
+md5sum Coccinia.grandis_classification_landscape.pdf
+j myproject
+l
+mkdir 02-Kimura_distance
+cd 02-Kimura_distance/
+ln -s /work/user/zqi/sex_chr/14_earlgrey_Dfam_h5/earlGrey_allChr/Coccinia.grandis_EarlGrey/Coccinia.grandis_summaryFiles/Coccinia.grandis.filteredRepeats.gff 
+ls
+mkdir scripts
+cd scripts
+nvim README.md 
+cat README.md 
+wget https://raw.githubusercontent.com/TobyBaril/EarlGrey/99f7607485d79779d90c0b7fe302ffec18152135/scripts/divergenceCalc/divergence_plot.R
+l
+ta
+l
+tmux ls
+ta
+exit
+srun --pty bash
+l
+tmux ls
+l
+cd ../01_EDTA/
+l
+cat mafft_new1.sh
+module load bioinfo/IQ-TREE/3.0.1
+iqtree -h
+module unload bioinfo/IQ-TREE/3.0.1
+module load bioinfo/IQ-TREE/2.4.0
+iqtree -h
+module unload bioinfo/IQ-TREE/2.4.0
+module load bioinfo/IQ-TREE/2.2.2.6 
+iqtree -h
+l
+nvim mafft_new1.sh
+sbatch mafft_new1.sh
+l
+j orth
+l
+cd ..
+l
+cd 06_codeml_1107
+l
+cat align_new_1.sh
+module load bioinfo/IQ-TREE/2.2.2.6
+iqtree -h
+l
+s
+l
+s
+tail XY.LTR.Gypsy.aln.trim.fa.log
+l
+les XY.LTR.Gypsy.aln.trim.fa.treefile
+cat XY.LTR.Gypsy.aln.trim.fa.treefile
+l
+cat mafft_iqtree_27057185.err
+l
+s
+l
+s
+l
+les XY.LTR.Gypsy.aln.trim.fa.treefile
+ta
+exit
+clear
+l
+tmux ls
+l
+les XY.LTR.Gypsy.aln.trim.fa.treefile
+cd ..
+l
+cd 02-Kimura_distance/
+l
+cd output/
+l
+cd ..
+l
+cat run.sh
+ta
+l
+j 02
+l
+nvim .
+l
+cd scripts/
+l
+cat README.md 
+cp divergence_plot.R divergence_plot_1.R
+cd ..
+vim -O scripts/*.R
+l
+nvim scripts/*.R
+cd ..
+l
+cd -
+l
+cp -rp output output_1
+cd output_1
+l
+cd ..
+l
+rm output_1
+rm -rf output_1
+cp run.sh run1.sh
+nvim run1.sh
+l scripts/
+sh run1.sh
+micromamba activate earlgrey
+sh run1.sh
+nvim scripts/divergence_plot_1.R 
+vim run.sh
+nvim run1.sh
+sh run1.sh
+nvim scripts/divergence_plot_1.R
+l
+rm -rf run1.sh output2
+cp run.sh run_new.sh
+nvim run_new.sh
+nvim scripts/divergence_plot_1.R
+nvim run_new.sh
+Rscript run_new.sh
+nvim run_new.sh
+sh run_new.sh
+nvim run_new.sh
+sh run_new.sh 
+l
+l output_earlGrey
+l
+rm -rf output_earlGrey
+cat run_new.sh 
+nvim scripts/divergence_plot_1.R
+nvim run_new.sh 
+sh run_new.sh 
+l output_earlGrey
+cd ..
+cd -
+l
+nvim run_new.sh
+nvim scripts/divergence_plot_1.R
+sh run_new.sh
+cd ..
+l
+cd 01_EDTA
+l
+rm test.R
+rm mafft_iqtree_27057185.err mafft_iqtree_27057185.out mafft_iqtree_27056677.err mafft_iqtree_27056677.out -f
+rm -f mafft_iqtree_27054389.out mafft_iqtree_27054389.err
+l
+l old
+les XY.LTR.Gypsy.aln.trim.fa
+cat mafft_new1.sh
+l
+cd sex_chr/
+l
+cd MyProject
+l
+cd 01_EDTA
+l
+les XY.LTR.Gypsy.aln.trim.fa
+l
+cd ..
+l
+l 02-Kimura_distance
+cd ..
+l
+mkdir 15_TEsorter
+cd 15_TEsorter
+l
+wget https://raw.githubusercontent.com/oushujun/LTR_retriever/refs/heads/master/LTR_retriever.yml
+l
+vim LTR_retriever.yml
+micromamba env create -f LTR_retriever.yml
+l
+vim LTR_retriever.yml
+micromamba activate LTR_retriever
+tmux ls
+micromamba activate LTR_retriever
+exit
+exit
+ta
+micromamba deactivate
+j 14
+j 15
+cd ..
+l
+cd 15_TEsorter
+l
+cd sex_chr/
+l
+j myedta
+j raw
+l
+cd ..
+l
+les /home/zqi/work/sex_chr/data/raw/genome/20240304_FINAL_genome/XY_2chr.fa
+ln -s /home/zqi/work/sex_chr/data/raw/genome/20240304_FINAL_genome/XY_2chr.fa
+l
+micromamba activate LTR_retriever
+which tesorter
+l
+which tesorter
+which repeatmasker
+micromamba deactivate
+micromamba activate LTR_retriever
+micromamba list
+l /work/user/zqi/micromamba/envs/LTR_retriever
+l /work/user/zqi/micromamba/envs/LTR_retriever/bin/
+cd /work/user/zqi/micromamba/envs/LTR_retriever/bin/
+l
+cat TEsorter
+l
+LTR_retriever.py get_full_seqs XY_2chr.fa > intact_ltr.fa
+LTR_retriever.py -genome XY_2chr.fa
+LTR_retriever.py XY_2chr.fa
+which ltrharvest
+search_module genometools
+module load bioinfo/GenomeTools/1.6.5
+which ltrharvest
+gt ltrharvest -h
+gt ltrharvest -help
+gt ltrharvest -index XY_2chr.fa -minlenltr 100 -maxlenltr 7000 -mintsd 4 -maxtsd 6 -motif TGCA -motifmis 1 -similar 85 -vic 10 -seed 20 -seqids yes > genome.fa.harvest.scn
+l
+gt suffixerator -db XY_2chr.fa -indexname XY_2chr.fa -tis -suf -lcp -des -ssp -sds -dna
+l
+nvim gt.sh
+cd ~/work/sex_chr/15_TEsorter
+l
+sh gt.sh
+git clone git@github.com:oushujun/LTR_FINDER_parallel.git
+l
+les genome.fa.harvest.scn
+l LTR_FINDER_parallel
+perl LTR_FINDER_parallel/LTR_FINDER_parallel 
+which perl
+micromamba deactivate
+search_module edta
+module load bioinfo/EDTA/2.2.2
+module load devel/Miniconda/Miniconda3
+module load bioinfo/EDTA/2.2.2
+which LTR_FINDER_parallel
+which ltrharvest
+conda list
+history|tail -n 10
+l
+nvim ltr_finder.sh
+sbatch ltr_finder.sh
+l
+s
+l
+cat ltr_finder_27133737.err
+nvim ltr_finder.sh
+l
+s
+sbatch ltr_finder.sh
+cat ltr_finder.sh
+which ltr_finder_parallel
+l /usr/local/bioinfo/src/Miniconda/Miniconda3/envs/EDTA-v2.2.2_env
+l /usr/local/bioinfo/src/Miniconda/Miniconda3/envs/EDTA-v2.2.2_env/bin
+nvim ltr_finder.sh
+s
+l
+rm -f ltr_finder_27133737.out ltr_finder_27133737.err ltr_finder_27133804.out ltr_finder_27133804.err
+nvim ltr_finder.sh
+l
+nvim ltr_finder.sh
+s
+sbatch ltr_finder.sh
+l /usr/local/bioinfo/src/Miniconda/Miniconda3/envs/EDTA-v2.2.2_env/bin
+which gt
+s
+l
+cat XY_2chr.fa.harvest.scn XY_2chr.fa.finder.combine.scn > XY_2chr.fa.rawLTR.scn
+cat gt.sh
+cat genome.fa.harvest.scn XY_2chr.fa.finder.combine.scn > XY_2chr.fa.rawLTR.scn
+nvim LTR_retriever.sh
+sbatch LTR_retriever.sh
+l
+s
+l
+s
+l
+s
+l
+s
+cd ..
+l
+mkdir 16_TEsorted
+cd 16_TEsorted
+l
+TEsorter -h
+TEsorter-test
+l
+les rice6.9.5.liban.rexdb.dom.tsv
+les rice6.9.5.liban.rexdb.cls.pep
+les rice6.9.5.liban.rexdb.cls.tsv
+les rice6.9.5.liban.rexdb.dom.faa
+les rice6.9.5.liban.rexdb.cls.pep
+head rice6.9.5.liban.rexdb.dom.faa
+module load bioinfo/SeqKit/2.9.0
+seqkit grep -r -p "gene=RT" rice6.9.5.liban.rexdb.dom.faa > rice6.9.5.liban.rexdb.RT.faa
+les rice6.9.5.liban.rexdb.RT.faa
+l
+les rice6.9.5.liban.rexdb.dom.faa
+seqkit grep -p "gene=RT" rice6.9.5.liban.rexdb.dom.faa > rice6.9.5.liban.rexdb.RT.faa
+les rice6.9.5.liban.rexdb.RT.faa
+seqkit grep -h
+l
+les rice6.9.5.liban.rexdb.dom.faa
+grep ">" rice6.9.5.liban.rexdb.cls.pep|wc -l
+grep ">" rice6.9.5.liban.rexdb.dom.faa|wc -l
+les rice6.9.5.liban.rexdb.cls.pep
+les rice6.9.5.liban.rexdb.dom.faa
+grep -c "gene=RT" rice6.9.5.liban.rexdb.dom.faa
+les rice6.9.5.liban.rexdb.dom.faa
+seqkit grep -r -p "gene=RT" rice6.9.5.liban.rexdb.dom.faa
+seqkit grep -nrp "gene=RT" rice6.9.5.liban.rexdb.dom.faa > rice6.9.5.liban.rexdb.RT.faa
+les rice6.9.5.liban.rexdb.RT.faa
+seqkit grep -h
+l
+s
+l
+mkdir test
+mv * test
+l
+cd ..
+l
+s
+l 15_TEsorter
+cd 15_TEsorter
+l
+les retriever_27134382.out
+cat XY_2chr.fa.out.LAI
+l
+cat XY_2chr.fa.out.q.LAI.LTR.ava.age
+rm -rf LTR_FINDER_parallel
+les XY_2chr.fa.LTRlib.redundant.fa
+grep ">" XY_2chr.fa.LTRlib.redundant.fa|wc -l
+grep ">" XY_2chr.fa.LTRlib.redundant.fa|les
+les XY_2chr.fa.LTRlib.fa
+LTR_retriever.py get_full_seqs XY_2chr.fa > intact_ltr.fa
+l
+les intact_ltr.fa
+grep ">" intact_ltr.fa|wc -l
+cd ..
+l
+mv 15_TEsorter 15_LTR_retriever
+cd 16_TEsorted
+l
+ln -s ../15_LTR_retriever/intact_ltr.fa 
+l
+TEsorter intact_ltr.fa
+l
+rm -rf tmp-a995709e-cf6d-11f0-af29-1070fdb89ee6
+TEsorter intact_ltr.fa -db rexdb-plant
+l
+rm -rf tmp-2509e0de-cf6e-11f0-a76b-1070fdb89ee6
+vim run.sh
+l
+sbatch run.sh
+s
+l
+les TEsorter_27137101.err
+vim run.sh
+head TEsorter_27137101.err
+les TEsorter_27137101.err
+module purge
+cat run.sh
+module load devel/Miniconda/Miniconda3
+module load bioinfo/EDTA/2.2.2
+l
+cd ..
+l
+cd 15_LTR_retriever
+l
+l *.sh
+les retriever_27134382.out
+les retriever_27134382.err
+cd -
+cd 16_TEsorted/
+l
+les TEsorter_27137101.err
+head TEsorter_27137101.err
+l
+s
+l
+les intact_ltr.fa.rexdb-plant.cls.pep
+les intact_ltr.fa.rexdb-plant.dom.faa
+grep ">" intact_ltr.fa.rexdb-plant.dom.faa|wc -l
+grep ">" intact_ltr.fa.rexdb-plant.cls.pep |wc -l
+nvim README.md 
+j myproject
+l
+mkdir 03_TEsorted_phylogeny
+cd 03_TEsorted_phylogeny
+ln -s ~/work/sex_chr/16_TEsorted/intact_ltr.fa.rexdb-plant.dom.faa
+l
+les intact_ltr.fa.rexdb-plant.dom.faa
+head intact_ltr.fa.rexdb-plant.dom.faa
+j 15
+cd -
+cd ../../..
+l
+cd sex_chr
+l
+cd 15_LTR_retriever
+l
+les XY_2chr.fa.pass.list
+head XY_2chr.fa.pass.list
+l *.sh
+cat LTR_retriever.sh
+eval -- $'module load devel/Miniconda/Miniconda3\nmodule load bioinfo/EDTA/2.2.2'
+LTR_retriever -h
+micromamba deactivate
+micromamba activate LTR_retriever
+micromamba list
+l /work/user/zqi/micromamba/envs/LTR_retriever
+l /work/user/zqi/micromamba/envs/LTR_retriever/bin
+LTR_retriever.py -h
+LTR_retriever.py --hekp
+LTR_retriever.py --help
+LTR_retriever.py -v
+LTR_retriever.py
+grep -i version /work/user/zqi/micromamba/envs/LTR_retriever/bin/LTR_retriever.py
+vim /work/user/zqi/micromamba/envs/LTR_retriever/bin/LTR_retriever.py
+LTR_retriever
+micromamba deactivate
+search_module ltr
+les /work/user/zqi/micromamba/envs/LTR_retriever/bin
+vim ~/.bashrc
+les ~/.env.sh
+lles /work/user/zqi/micromamba/envs/LTR_retriever/bin
+micromamba create -n LTR_retriever
+micromamba activate LTR_retriever
+micromamba install bioconda::ltr_retriever
+l
+LTR_retriever -h
+l
+j sex
+l
+mkdir 15_LTR_retriever_1
+cd 15_LTR_retriever_1
+l
+nvim README.md 
+l
+cp LTR_retriever.sh ~/work/sex_chr/15_LTR_retriever_1
+nvim LTR_retriever.sh 
+cat LTR_retriever.sh
+ln -s ~/work/sex_chr/15_LTR_retriever/XY_2chr.fa.rawLTR.scn
+l
+l XY_2chr.fa.rawLTR.scn
+ln -s ~/work/sex_chr/15_LTR_retriever/XY_2chr.fa
+l
+mkdir pdist
+cp LTR_retriever.sh pdist
+cd pdist/
+l
+nvim LTR_retriever.sh
+sbatch LTR_retriever.sh
+l
+cd ..
+l
+nvim LTR_retriever.sh
+l
+mkdir K2P JC69
+cp pdist/LTR_retriever.sh K2p
+l
+rm K2p
+cp pdist/LTR_retriever.sh K2P
+cp pdist/LTR_retriever.sh JC69
+cd K2P
+l
+nvim LTR_retriever.sh
+sbatch LTR_retriever.sh
+cat LTR_retriever.sh
+s
+scancel 27140259 27140798
+l
+cd ..
+l
+s
+rm -rf K2P pdist
+cd JC69
+l
+nvim LTR_retriever.sh
+l
+sbatch LTR_retriever.sh
+cd ..
+l
+mkdir K2P pdist
+cp JC69/LTR_retriever.sh K2P
+cp JC69/LTR_retriever.sh pdist
+cd K2P
+nvim LTR_retriever.sh 
+sbatch LTR_retriever.sh
+cd ../pdist/
+nvim LTR_retriever.sh 
+sbatch LTR_retriever.sh
+cd ..
+s
+l
+cd K2P
+l
+cat K2P_27141135.err
+search_module RMblast
+l
+vim LTR_retriever.sh 
+sbatch LTR_retriever.sh
+l
+cat K2P_27141492.err
+l
+cat K2P_27141492.err
+repeatmasker
+cat LTR_retriever.sh
+micromamba install -c bioconda repeatmasker
+RepeatMasker -engine rmblast -help
+l
+micromamba activate LTR_retriever
+LTR_retriever -genome ../XY_2chr.fa -inharvest ../XY_2chr.fa.rawLTR.scn 
+which rmblastn
+which RepeatMasker
+dirname $(which RepeatMasker)
+l /work/user/zqi/micromamba/envs/LTR_retriever
+l /work/user/zqi/micromamba/envs/LTR_retriever/share
+l /work/user/zqi/micromamba/envs/LTR_retriever/share/RepeatMasker/
+cd /work/user/zqi/micromamba/envs/LTR_retriever/share/RepeatMasker/
+perl ./configure
+l configure 
+which perl
+echo $PERL5LIB
+eval -- $'unset PERL5LIB\nunset PERL_LOCAL_LIB_ROOT\nunset PERL_MB_OPT\nunset PERL_MM_OPT'
+echo $PERL5LIB
+perl ./configure
+cd ..
+l
+cd 15_LTR_retriever_1
+l
+cd K2P
+l
+rm dummy*
+rm dummy* -f
+l
+nvim LTR_retriever.sh
+sbatch LTR_retriever.sh
+l
+cat K2P_27141555.err
+l
+cd ~/work/sex_chr/15_LTR_retriever_1/K2P
+l
+nvim LTR_retriever.sh
+sbatch K2P_27141555.err
+sbatch LTR_retriever.sh
+s
+l
+l
+vim ~/.bashrc
+vim ~/.env.sh
+vim ~/.bashrc
+vim ~/.bash_profile
+echo PERL5LIB
+echo $PERL5LIB
+ta
+echo $PERL5LIB
+eval -- $'grep PERL5LIB ~/.bashrc\ngrep PERL5LIB ~/.bash_profile\ngrep PERL5LIB ~/.profile'
+module list
+vim ~/.bashrc
+grep PERL5LIB ~/.env.sh
+vim ~/.env.sh
+echo $PERL_LOCAL_LIB_ROOT
+mv ~/.bashrc ~/.bashrc.bak1202
+mv ~/.bashrc.bak1202 ~/.bashrc
+vim ~/.bashrc
+vim ~/.env.sh 
+l
+cd sex_chr/
+l
+cd 15_LTR_retriever_1
+l
+l K2P
+l
+cd pdist
+l
+rm -f dummy*
+l
+cat LTR_retriever.sh
+sbatch LTR_retriever.sh
+l
+cat pdist_27141605.err
+source ~/.bashrc
+sbatch LTR_retriever.sh
+l
+vim ~/.env.sh 
+l
+cd ..
+l
+cd JC69/
+l
+rm -f dummy*
+l
+sbatch LTR_retriever.sh
+l
+cd ..
+l
+s
+l
+cd ..
+l
+cd MyProject
+l
+cd 03_TEsorted_phylogeny
+l
+s
+echo $PERL5LIB
+l
+cd sex_chr/
+l
+ls -lrth
+exit
+tmux ls
+s
+l
+cd ..
+l
+cd JC69
+l
+tail JC69_27141618.out
+les XY_2chr.fa.out.superfam.size.list
+cd ..
+l
+cd ..
+l
+cd MyProject
+l
+cd 03_TEsorted_phylogeny
+l
+lles .
+les XY_2chr.fa.pass.list
+head XY_2chr.fa.pass.list
+s
+l
+cd ..
+l
+cd pdist
+l
+head XY_2chr.fa.pass.list
+l
+cd ..
+l
+s
+cd K2P
+l
+rm dummy* -f
+l
+rm -f K2P_27141135.out K2P_27141135.err K2P_27141492.out K2P_27141492.err K2P_27141555.out K2P_27141555.err
+l
+les XY_2chr.fa.out
+les XY_2chr.fa.LTR.homo.gff3
+cat XY_2chr.fa.out.q.LAI.LTR.ava.age
+les XY_2chr.fa.out.LAI
+les XY_2chr.fa.out
+head XY_2chr.fa.pass.list
+cat LTR_retriever.sh 
+LTR_retriever -v
+LTR_retriever -h
+l
+head XY_2chr.fa.pass.list
+which nvim
+cd ~/neovim/
+l
+cd ..
+l
+cat lazyvim_reinstall.sh
+l neovim
+l
+l tmp.20250205120729.bak
+l
+which cmake
+type sshell
+type
+type -h
+vim ~/.bashrc
+vim ~/.env.sh 
+type lles
+cat /etc/profile
+vim /etc/profile
+vim ~/.env.sh 
+vim ~/.bashrc
+source ~/.bashrc
+envc
+exit
+sshell
+j myproject
+l
+cd ~/.config/nvim
+l
+cd lua/
+l
+cd config/
+l
+vim options.lua
+j myproject
+cd ~/.config/nvim
+l
+cd lua
+l
+cd config/
+l
+vim options.lua 
+cd ..
+l
+cd ..
+l
+vim init.lua 
+j myproject
+tmux ls
+j plugins
+l
+vim neo-tree.lua
+j myproject
+j plugins
+l
+vim neo-tree.lua 
+nvim .
+nvim neo-tree.lua
+nvim .
+j myproject
+j nvim
+l
+nvim .
+l
+cd lua/plugins/
+l
+rm neo-tree.lua 
+l
+cd sex_chr/
+l
+cd MyProject/
+l
+ls -A
+mkdir ../tmp1203
+mv .Rproj.user .Rprofile init.R MyProject.Rproj ../tmp1203
+nvim .
+nvim .
+nvim .
+nvim .
+nvim .
+nvim .
+nvim .
+echo $PATH
+envc
+vim ~/.bashrc
+j myproject
+nvim .
+tree
+l
+tree
+clear
+tree
+reset
+tree
+l
+git status
+cd ~/.config/nvim
+l
+cd lua
+l
+cd plugins/
+l
+nvim neo-tree.lua
+l
+nvim .
+nvim neo-tree.lua
+nvim .
+nvim neo-tree.lua 
+rm neo-tree.lua
+cd ~
+l
+nvim .
+j myproject
+l
+j myproject
+nvim .
+clear
+nvim .
+l
+clear
+l
+cd ..
+l
+ls -A
+mv .git .git.bak
+git status
+l
+cd MyProject/
+l
+nvim .
+cd ~/.config/nvim
+l
+git status
+l
+cat init.lua
+tree lua
+cd ~/dotfiles/
+l
+cat step0.sh
+cat README.md
+cat step0.sh
+git pull origin main
+l
+cat genobioinfo_add_file.sh
+cp -rp ~/.config/nvim genobioinfo
+git status
+git diff
+l
+git diff
+git status
+git diff genobioinfo/nvim/lua/config/options.lua
+git diff genobioinfo/nvim/lua/config/autocmds.lua
+vim genobioinfo/nvim/lua/config/autocmds.lua
+vim genobioinfo/nvim/lua/config/options.lua
+git status
+git diff
+l
+git status
+git diff genobioinfo/nvim/init.lua
+l
+head README.md
+git add .
+git commit -m "genobioinfo update"
+git push
+cd ..
+l
+ls -A
+cat .gitignore
+git status
+rm -r .git
+vim .tmux.conf
+vim .tmux.conf.local
+vim .tmux.conf
+vim ~/.tmux.conf.local
+clear
+l
+j myproject
+tree
+vim ~/.tmux.conf.local
+tail ~/.tmux.conf.local
+tmux
+exit
+ta
+exit
+exit
+tc
+l
+cd ~
+l
+vim ~/.tmux.conf.local
+l
+vim ~/.tmux.conf.local
+l
+vim ~/.tmux.conf.local
+j dotfile
+l
+cd genobioinfo/
+l
+cd nvim
+l
+cd ..
+l
+vim ~/.tmux.conf.local
+git diff HEAD^ HEAD -- nvim
+which git
+git -v
+git diff HEAD^ HEAD -- nvim/
+tmux
+cd ~/dotfiles/genobioinfo
+git diff HEAD^ HEAD -- nvim/
+git -v
+which less
+git config --get core.pager
+echo $LESS
+git config --show-origin --get-regexp pager
+git config --show-origin --get core.pager
+git var GIT_PAGER
+l
+less
+l
+echo $LESS
+echo $PAGER
+eval -- $'ls ~/.lesskey\nls /etc/lesskey\n'
+echo "hello" | less
+git var GIT_PAGER
+git config --get core.pager
+clear
+cat ~/.gitconfig 
+l
+j sex_chr
+l
+cd tmp1203
+l
+cat *
+tmux ls
+ta
+exit
+tmux attach -t 0
+tmux attach -t 1
+tmux attach -t 2
+exit
+tmux attach -t 3
+j myproject
+l
+cd ..
+l
+cat tmp1203/*
+cd MyProject/
+cat scripts/R/00_load_packages.R
+l
+cat requirements.txt
+rm requirements.txt
+cd ..
+l
+cd tmp1203/
+l
+cat MyProject.Rproj 
+mv MyProject.Rproj ../MyProject/
+l
+cd ..
+rm -rf tmp1203
+cd MyProject/
+l
+cd 03_TEsorted_phylogeny/
+l
+j myproject
+l
+cd 03_TEsorted_phylogeny/
+l
+j sex_chr
+l
+cd 15_LTR_retriever_1
+l
+cat LTR_retriever.sh 
+cd K2P
+l
+cat LTR_retriever.sh 
+l
+les K2P_27141557.out
+head K2P_27141557.out 
+l
+ln -s ~/work/sex_chr/15_LTR_retriever_1/K2P/XY_2chr.fa.pass.list
+l
+cd ../..
+l
+cd 16_TEsorted
+l
+cd ../../15_LTR_retriever/
+l
+l *.sh
+cat README.md 
+cat run.sh
+history|grep intact_ltr.fa
+hs intact_ltr.fa
+which hs
+les ~/.bash_history
+nl ~/.bash_history|les
+wc -l ~/.bash_history
+ta
+cd ~
+l
+ls -A
+wc -l .bash_history
+ls -lrthA
+l
+cd ~
+l
+ls -lrthA
+wc -l .bash_history
+stat .bash_history
+vim .bash_history
+ls -i ~/.bash_history
+l
+cat ~/.bash_history |grep "history"
+envc
+vim ~/.bashrc
+l
+j dotfiles
+l
+vim genobioinfo_add_file.sh
+cat genobioinfo_add_file.sh
